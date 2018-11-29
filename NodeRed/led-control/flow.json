@@ -1,0 +1,250 @@
+[
+    {
+        "id": "1ac2f0b3.5e7e0f",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "7c9e5817.c8ffa8",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#00006f",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#400080",
+                "baseFont": "Tahoma,Geneva,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#00006f",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#00006f",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0000bb",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#00006f",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "true",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "7182f39e.04ab8c",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "fceb30ff.5dc81",
+        "type": "ui_group",
+        "z": "",
+        "name": "control",
+        "tab": "7182f39e.04ab8c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "5de5c188.aa084",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "test.mosquito.org",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "762bc216.1dacec",
+        "type": "ui_tab",
+        "name": "Tab 2",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "7dfd4ab4.5a0b24",
+        "type": "ui_group",
+        "z": "",
+        "name": "Default",
+        "tab": "762bc216.1dacec",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "90bc05ae.6e4278",
+        "type": "ui_button",
+        "z": "1ac2f0b3.5e7e0f",
+        "name": "",
+        "group": "fceb30ff.5dc81",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "On",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "ledcontrol",
+        "x": 200,
+        "y": 140,
+        "wires": [
+            [
+                "8c1ce518.272898"
+            ]
+        ]
+    },
+    {
+        "id": "507ba38d.3e9efc",
+        "type": "ui_button",
+        "z": "1ac2f0b3.5e7e0f",
+        "name": "",
+        "group": "fceb30ff.5dc81",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Off",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "2",
+        "payloadType": "str",
+        "topic": "ledcontrol",
+        "x": 200,
+        "y": 240,
+        "wires": [
+            [
+                "8c1ce518.272898"
+            ]
+        ]
+    },
+    {
+        "id": "8c1ce518.272898",
+        "type": "mqtt out",
+        "z": "1ac2f0b3.5e7e0f",
+        "name": "",
+        "topic": "ledcontrol",
+        "qos": "",
+        "retain": "",
+        "broker": "5de5c188.aa084",
+        "x": 430,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "8e3f2fdc.237b3",
+        "type": "debug",
+        "z": "1ac2f0b3.5e7e0f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 590,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "e3d616d.a68ece8",
+        "type": "mqtt in",
+        "z": "1ac2f0b3.5e7e0f",
+        "name": "",
+        "topic": "ledcontrol",
+        "qos": "0",
+        "broker": "5de5c188.aa084",
+        "x": 290,
+        "y": 60,
+        "wires": [
+            [
+                "8e3f2fdc.237b3"
+            ]
+        ]
+    }
+]
